@@ -1,0 +1,11 @@
+{
+  "local": {
+    "duckduckgo": {},
+    "openapi_action.OpenAPIActionToolSpec": {
+      "openapi_uri": "The URL or file path of the OpenAPI schema"
+    }
+  },
+  "llamahub": {
+    "wikipedia.WikipediaToolSpec": {}
+  }
+}
