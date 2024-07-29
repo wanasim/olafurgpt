@@ -52,6 +52,7 @@
     "@types/react-syntax-highlighter": "^15.5.11",
     "@types/uuid": "^9.0.8",
     "autoprefixer": "^10.4.16",
+    "copy-webpack-plugin": "^12.0.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.55.0",
     "eslint-config-next": "^14.2.4",
