@@ -13,6 +13,7 @@ import {
   createStreamTimeout,
 } from "./llamaindex/streaming/events";
 import { LlamaIndexStream } from "./llamaindex/streaming/stream";
+import wasm from "tiktoken/lite/tiktoken_bg.wasm?module";
 
 initObservability();
 initSettings();
