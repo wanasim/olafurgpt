@@ -61,6 +61,12 @@ docker run \
   <your_app_image_name>
 ```
 
+## Using PLSQL
+
+docker exec -it olafur-gpt-db-1 psql -U olafur olafur
+
+\l - shows list of dbs
+
 ## Learn More
 
 To learn more about LlamaIndex, take a look at the following resources:

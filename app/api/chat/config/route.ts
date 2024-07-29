@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
  */
 export async function GET() {
   const config = {
-    starterQuestions: process.env.CONVERSATION_STARTERS?.trim().split("\n"),
+    starterQuestions: process.env.CONVERSATION_STARTERS?.trim().split(","),
   };
   return NextResponse.json(config, { status: 200 });
 }

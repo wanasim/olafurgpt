@@ -42,10 +42,23 @@ export default function ChatMessages(
 
   return (
     <div
-      className="flex-1 w-full rounded-xl bg-white p-4 shadow-xl relative overflow-y-auto"
+      className="flex-1 w-full rounded-xl bg-[#1B384D] bg-opacity-85 p-4 shadow-xl relative overflow-y-auto"
       ref={scrollableChatContainerRef}
     >
       <div className="flex flex-col gap-5 divide-y">
+        {!props.messages.length && (
+          <div className="text-xl text-center">
+            <h1 className="font-bold mb-6">Welcome to ÓlafurGPT!</h1> Dive into
+            the mesmerizing universe of the Icelandic composer and
+            multi-instrumentalist Ólafur Arnalds. Whether you&rsquo;re curious
+            about his discography, upcoming performances, or the stories behind
+            his evocative compositions, ÓlafurGPT is here to provide you with
+            detailed, accurate information drawn from publicly available data.
+            Ask your questions clearly and concisely, and let ÓlafurGPT guide
+            you through the serene and captivating realm of Ólafur&rsquo;s music
+            and artistry.
+          </div>
+        )}
         {props.messages.map((m, i) => {
           const isLoadingMessage = i === messageLength - 1 && props.isLoading;
           return (
@@ -73,10 +86,11 @@ export default function ChatMessages(
         </div>
       )}
       {!messageLength && starterQuestions?.length && props.append && (
-        <div className="absolute bottom-6 left-0 w-full">
-          <div className="grid grid-cols-2 gap-2 mx-20">
+        <div className="mt-8 text-blue-950  left-0 w-full">
+          <div className="flex flex-wrap flex-row py-4 gap-4 justify-center mx-16">
             {starterQuestions.map((question, i) => (
               <Button
+                className="hover:bg-sky-300 border-none"
                 variant="outline"
                 key={i}
                 onClick={() =>

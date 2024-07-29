@@ -8,10 +8,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "tsx app/api/chat/engine/generate.ts"
+    "generate": "tsx app/api/chat/engine/generate.ts",
+    "loader": "tsx app/api/chat/engine/loader.ts"
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
+    "@datastax/astra-db-ts": "^1.4.0",
     "@e2b/code-interpreter": "^0.0.5",
     "@llamaindex/pdf-viewer": "^1.1.1",
     "@radix-ui/react-collapsible": "^1.0.3",
@@ -44,6 +46,7 @@
     "vaul": "^0.9.1"
   },
   "devDependencies": {
+    "@langchain/community": "^0.2.20",
     "@types/node": "^20.10.3",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
@@ -54,9 +57,11 @@
     "eslint": "^8.55.0",
     "eslint-config-next": "^14.2.4",
     "eslint-config-prettier": "^8.10.0",
+    "langchain": "^0.2.10",
     "postcss": "^8.4.32",
     "prettier": "^3.2.5",
     "prettier-plugin-organize-imports": "^3.2.4",
+    "puppeteer": "^19.11.1",
     "tailwindcss": "^3.3.6",
     "tsx": "^4.7.2",
     "typescript": "^5.3.2"

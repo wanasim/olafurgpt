@@ -54,11 +54,12 @@ export const initSettings = async () => {
 };
 
 function initOpenAI() {
+  console.log("initiazliing open ai!!!!");
   Settings.llm = new OpenAI({
     model: process.env.MODEL ?? "gpt-3.5-turbo",
-    maxTokens: process.env.LLM_MAX_TOKENS
-      ? Number(process.env.LLM_MAX_TOKENS)
-      : undefined,
+    maxTokens: undefined, //process.env.LLM_MAX_TOKENS
+    //? Number(process.env.LLM_MAX_TOKENS)
+    //: undefined
   });
   Settings.embedModel = new OpenAIEmbedding({
     model: process.env.EMBEDDING_MODEL,
@@ -69,6 +70,7 @@ function initOpenAI() {
 }
 
 function initOllama() {
+  console.log("process.model!@#!@!@#!@#", process.env.MODEL);
   const config = {
     host: process.env.OLLAMA_BASE_URL ?? "http://127.0.0.1:11434",
   };

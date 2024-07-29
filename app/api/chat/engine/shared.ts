@@ -2,7 +2,11 @@ export const PGVECTOR_COLLECTION = "data";
 export const PGVECTOR_SCHEMA = "public";
 export const PGVECTOR_TABLE = "llamaindex_embedding";
 
-const REQUIRED_ENV_VARS = ["PG_CONNECTION_STRING"];
+const REQUIRED_ENV_VARS = [
+  "ASTRA_DB_APPLICATION_TOKEN",
+  "ASTRA_DB_API_ENDPOINT",
+  "ASTRA_DB_COLLECTION",
+];
 
 export function checkRequiredEnvVars() {
   const missingEnvVars = REQUIRED_ENV_VARS.filter((envVar) => {

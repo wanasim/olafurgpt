@@ -1,7 +1,6 @@
 import { JSONValue } from "ai";
 import { Button } from "../button";
 import { DocumentPreview } from "../document-preview";
-import FileUploader from "../file-uploader";
 import { Input } from "../input";
 import UploadImagePreview from "../upload-image-preview";
 import { ChatHandler } from "./chat.interface";
@@ -50,6 +49,7 @@ export default function ChatInput(
   };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log("EEE", e);
     const annotations = getAnnotations();
     if (annotations.length) {
       handleSubmitWithAnnotations(e, annotations);
@@ -74,7 +74,7 @@ export default function ChatInput(
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-xl bg-white p-4 shadow-xl space-y-4 shrink-0"
+      className="rounded-xl bg-[#1B384D] p-4 shadow-xl space-y-4 shrink-0"
     >
       {imageUrl && (
         <UploadImagePreview url={imageUrl} onRemove={() => setImageUrl(null)} />
@@ -90,7 +90,7 @@ export default function ChatInput(
           ))}
         </div>
       )}
-      <div className="flex w-full items-start justify-between gap-4 ">
+      <div className="flex w-full items-start justify-between gap-4 text-black font-medium">
         <Input
           autoFocus
           name="message"
@@ -98,14 +98,6 @@ export default function ChatInput(
           className="flex-1"
           value={props.input}
           onChange={props.handleInputChange}
-        />
-        <FileUploader
-          onFileUpload={handleUploadFile}
-          onFileError={props.onFileError}
-          config={{
-            allowedExtensions: ALLOWED_EXTENSIONS,
-            disabled: props.isLoading,
-          }}
         />
         <Button type="submit" disabled={props.isLoading || !props.input.trim()}>
           Send message

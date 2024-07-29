@@ -1,0 +1,14 @@
+services:
+  db:
+    image: ankane/pgvector
+    ports:
+      - 5001:5432
+    volumes:
+      - pgdata2:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER=olafur
+      - POSTGRES_PASSWORD=olafur
+      - POSTGRES_DB=olafur
+volumes:
+  pgdata2:

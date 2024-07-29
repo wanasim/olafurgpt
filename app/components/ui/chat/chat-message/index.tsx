@@ -15,7 +15,6 @@ import {
   getAnnotationData,
 } from "../index";
 import ChatAvatar from "./chat-avatar";
-import { ChatEvents } from "./chat-events";
 import { ChatFiles } from "./chat-files";
 import { ChatImage } from "./chat-image";
 import { ChatSources } from "./chat-sources";
@@ -62,13 +61,6 @@ function ChatMessageContent({
     {
       order: 1,
       component: imageData[0] ? <ChatImage data={imageData[0]} /> : null,
-    },
-    {
-      order: -3,
-      component:
-        eventData.length > 0 ? (
-          <ChatEvents isLoading={isLoading} data={eventData} />
-        ) : null,
     },
     {
       order: 2,
