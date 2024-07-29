@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
-import fs from "fs";
+import nextConfig from "./next.config.js";
 import webpack from "./webpack.config.mjs";
 
-const nextConfig = JSON.parse(fs.readFileSync("./next.config.json", "utf-8"));
 nextConfig.webpack = webpack;
 
 export default nextConfig;
