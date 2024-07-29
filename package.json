@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@apidevtools/swagger-parser": "^10.1.0",
-    "@datastax/astra-db-ts": "^1.4.0",
     "@e2b/code-interpreter": "^0.0.5",
     "@llamaindex/pdf-viewer": "^1.1.1",
     "@radix-ui/react-collapsible": "^1.0.3",
