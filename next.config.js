@@ -7,20 +7,20 @@ module.exports = {
       asyncWebAssembly: true,
       layers: true,
     };
-    if (isServer) {
+    if (isServer && dev) {
       config.devtool = "source-map";
+      // config.plugins.push(
+      //   new CopyPlugin({
+      //     patterns: [
+      //       {
+      //         from: "./node_modules/tiktoken/lite/tiktoken_bg.wasm",
+      //         to: "tiktoken_bg.wasm",
+      //         toType: "file",
+      //       },
+      //     ],
+      //   }),
+      // );
     }
-    // config.plugins.push(
-    //   new CopyPlugin({
-    //     patterns: [
-    //       {
-    //         from: "./node_modules/tiktoken/lite/tiktoken_bg.wasm",
-    //         to: "tiktoken_bg.wasm",
-    //         toType: "file",
-    //       },
-    //     ],
-    //   }),
-    // );
 
     return config;
   },
