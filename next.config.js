@@ -1,6 +1,7 @@
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
+  productionBrowserSourceMaps: true,
   webpack: (config, { isServer, dev }) => {
     config.experiments = {
       asyncWebAssembly: true,
