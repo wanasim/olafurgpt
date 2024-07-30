@@ -26,7 +26,7 @@ module.exports = {
   },
   experimental: {
     outputFileTracingIncludes: {
-      "/api/chat": ["./node_modules/tiktoken/lite/tiktoken_bg.wasm"],
+      "/api/**/*": ["./node_modules/**/*.wasm"],
       "/*": ["./cache/**/*"],
     },
     serverComponentsExternalPackages: ["sharp", "onnxruntime-node"],
