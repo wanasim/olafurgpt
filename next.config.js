@@ -7,7 +7,9 @@ module.exports = {
       asyncWebAssembly: true,
       layers: true,
     };
-
+    if (isServer) {
+      config.devtool = "source-map";
+    }
     // config.plugins.push(
     //   new CopyPlugin({
     //     patterns: [
