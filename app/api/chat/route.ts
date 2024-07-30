@@ -13,7 +13,6 @@ import {
   createStreamTimeout,
 } from "./llamaindex/streaming/events";
 import { LlamaIndexStream } from "./llamaindex/streaming/stream";
-import wasm from "tiktoken/lite/tiktoken_bg.wasm?module";
 
 initObservability();
 initSettings();
@@ -23,13 +22,16 @@ export const dynamic = "force-dynamic";
 
 export async function POST(request: NextRequest) {
   // Init Vercel AI StreamData and timeout
+  console.log("DSSDFDFDSF");
   const vercelStreamData = new StreamData();
   const streamTimeout = createStreamTimeout(vercelStreamData);
 
   try {
+    console.log("HAPPENASDF");
     const body = await request.json();
     const { messages }: { messages: Message[] } = body;
     const userMessage = messages.pop();
+    console.log("aomd!#@#$!#!@#");
     if (!messages || !userMessage || userMessage.role !== "user") {
       return NextResponse.json(
         {
@@ -59,9 +61,10 @@ export async function POST(request: NextRequest) {
         return message.annotations ?? [];
       },
     );
+    console.log("TESTINGSDF@#$");
     const ids = retrieveDocumentIds(allAnnotations);
     const chatEngine = await createChatEngine(ids);
-
+    console.log("user MesgAge Contente@#$#@$@");
     // Convert message content from Vercel/AI format to LlamaIndex/OpenAI format
     const userMessageContent = convertMessageContent(
       userMessage.content,
