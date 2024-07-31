@@ -17,8 +17,8 @@ export async function createChatEngine(documentIds?: string[]) {
   return new ContextChatEngine({
     chatModel: Settings.llm,
     retriever,
+    systemPrompt: process.env.SYSTEM_PROMPT,
     // disable as a custom system prompt disables the generated context
-    // systemPrompt: process.env.SYSTEM_PROMPT,
   });
 
   // if (index) {
