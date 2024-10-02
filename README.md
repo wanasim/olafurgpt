@@ -1,4 +1,23 @@
-This is a [LlamaIndex](https://www.llamaindex.ai/) project using [Next.js](https://nextjs.org/) bootstrapped with [`create-llama`](https://github.com/run-llama/LlamaIndexTS/tree/main/packages/create-llama).
+# Ólafur GPT
+
+Ólafur GPT is a generative AI-powered chatbot that provides insights and content related to the music and works of Ólafur Arnalds. This app leverages LlamaIndex, AstraDB as a vector database, GPT-turbo as the language model, and Next.js for the user interface.
+
+## Technologies Used
+
+- **LlamaIndex**: A flexible framework for building generative AI applications. LlamaIndex facilitates data management and interaction with the GPT model.
+- **AstraDB**: Used as a vector database to store embeddings and provide efficient retrieval of information.
+- **GPT-turbo**: A variant of GPT-3.5, providing quick, powerful natural language processing capabilities.
+- **OpenAI**: Model provider offering powerful models for NLP tasks.
+- **Next.js**: A React-based web framework used for building the UI of the application.
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js version 16.x or later
+- An OpenAI API key
+- Access to an AstraDB instance
+- AstraDB Token for authentication
 
 ## Getting Started
 
@@ -74,4 +93,4 @@ To learn more about LlamaIndex, take a look at the following resources:
 - [LlamaIndex Documentation](https://docs.llamaindex.ai) - learn about LlamaIndex (Python features).
 - [LlamaIndexTS Documentation](https://ts.llamaindex.ai) - learn about LlamaIndex (Typescript features).
 
-You can check out [the LlamaIndexTS GitHub repository](https://github.com/run-llama/LlamaIndexTS) - your feedback and contributions are welcome!
+You can check out [the LlamaIndexTS GitHub repository](https://github.com/run-llama/LlamaIndexTS) - your feedback and contributions are welcome! I even helped [patch an update](https://github.com/run-llama/create-llama/issues/164#issuecomment-2262313425) to the `create-llama` package to resolve Vercel/NextJS deployments :)
